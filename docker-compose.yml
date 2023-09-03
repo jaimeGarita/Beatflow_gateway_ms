@@ -1,0 +1,16 @@
+version: '3'
+services:
+  my_app:
+    image: usermanagement_ms
+    container_name: usermanagement_ms
+    ports:
+      - "8000:8000"
+    networks:
+      network_add:
+        ipv4_address: 172.20.0.2
+
+networks:
+  network_add:
+    ipam:
+      config:
+        - subnet: 172.20.0.0/16
